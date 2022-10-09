@@ -8,12 +8,17 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class TaskService {
 
-  private apiUrl = "http://localhost:5000/tasks"
+  private apiUrl = "http://localhost:5000/tasks";
 
   constructor(private http:HttpClient) { }
 
   // function that retuns the list of mock tasks as an observable
   getTask(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl);
+  }
+
+  deleteTask(task: Task): Observable<Task>{
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.delete<Task>(url);
   }
 }
