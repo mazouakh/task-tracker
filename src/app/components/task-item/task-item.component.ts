@@ -11,7 +11,8 @@ export class TaskItemComponent implements OnInit {
 
   @Input() task! : Task;  // Task element passed as input from the Tasks component
   @Output() btnDelete: EventEmitter<Task>= new EventEmitter<Task>();
-
+  @Output() btnToggleReminder: EventEmitter<Task> = new EventEmitter<Task>();
+  
   faTimes = faTimes;  // tying the icon to a property in our component class
 
   constructor() { 
@@ -22,5 +23,8 @@ export class TaskItemComponent implements OnInit {
   }
   deleteTask(){
     this.btnDelete.emit(this.task);
+  }
+  toggleReminder(){
+    this.btnToggleReminder.emit(this.task);
   }
 }
