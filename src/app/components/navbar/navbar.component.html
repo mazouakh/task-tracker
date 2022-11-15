@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="nav-item">
+                <div class="logo">
+                    <p>{{title}}</p>
+                </div>
+            </div>
+            <div class="nav-item">
+                <app-navlink 
+                *ngFor="let navlink of navlinks"
+                [navlink]="navlink">
+                </app-navlink>
+            </div>
+            <div class="nav-item">
+                <div class="nav-user-pic">
+                    <img class="user-image" src="../../../assets/img/user.png">
+                </div>
+                <div class="nav-hamburger">
+                    <div class="nav-hamburger-inner-container">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

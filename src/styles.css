@@ -12,6 +12,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.header-container {
+  min-height: 56px;
+}
+
 .container {
   max-width: 500px;
   margin: 30px auto;
