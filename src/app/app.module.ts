@@ -10,6 +10,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavlinkComponent } from './components/navlink/navlink.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 
 
@@ -21,6 +23,8 @@ import { LoginPopupComponent } from './components/login-popup/login-popup.compon
     TasksComponent,
     TaskItemComponent,
     AddTaskComponent,
+    NavbarComponent,
+    NavlinkComponent,
     LoginPopupComponent
   ],
   imports: [

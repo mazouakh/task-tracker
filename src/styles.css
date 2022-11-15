@@ -25,6 +25,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.header-container {
+  min-height: 56px;
+}
+
 .container {
   margin: 30px auto;
   overflow: auto;

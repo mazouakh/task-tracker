@@ -4,7 +4,7 @@
       "id": 1,
       "text": "Doctors Appointment",
       "day": "May 5th at 2:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 2,
@@ -23,6 +23,28 @@
       "day": "Oct 10 at 11pm",
       "reminder": true,
       "id": 4
+    }
+  ],
+  "navlinks": [
+    {
+      "text": "Calendar",
+      "icon": "fa-calendar",
+      "route": "/calendar"
+    },
+    {
+      "text": "Tasks",
+      "icon": "fa-note-sticky",
+      "route": "/tasks"
+    },
+    {
+      "text": "Reports",
+      "icon": "fa-chart-line",
+      "route": "/reports"
+    },
+    {
+      "text": "Achievements",
+      "icon": "fa-certificate",
+      "route": "/achievements"
     }
   ]
 }

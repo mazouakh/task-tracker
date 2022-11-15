@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+font-family: "Poppins", sans-serif;
+color: black;
+}
+
+/* ----------- Navbar ----------- */
+
+.main-container{
+    color: #4d4375;
+    font-size: 16px;
+    font-family: NeurialGrotesk,Helvetica,Arial;
+    letter-spacing: .5px;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+/* header tag */
+
+.main-container header {
+    min-height: 56px;
+    min-width: 100vw;
+    position: relative;
+    width: 100%;
+  }
+  
+
+  /* ***** Left Side ***** */
+
+  /* div contenaire de nav */
+  header .nav-container {
+    border-bottom: 1px solid rgba(33, 21, 81, 0.08);
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    min-height: 56px;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+  }
+  
+  /* balise nav */
+  .nav-container .navbar { 
+    border-top: 1px solid rgba(33, 21, 81, 0.08);
+    display: flex;
+    flex: 1 1 0%;
+    height: 56px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /* div a l'interieur de nav */
+  .nav-item {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    user-select: none;
+  }
+  
+.nav-item .logo{
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+    color: rgb(77, 67, 117);
+}
+
+/* <a> Tab Links inside first div */
+.nav-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* ***** Right Side ***** */
+
+/* div user picture container */
+.nav-user-pic {
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 50px;
+    height: 32px;
+    width: 32px;
+    margin-right: 24px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+/* img inside that div */
+.nav-user-pic img {
+    opacity: 1;
+    background-image: url(https://lh3.googleusercontent.com/a/ALm5wu0R789PRGBg-Xylb6jAtyywQmsXL0amlaqOM8_k=s96-c);
+    background-size: cover;
+    border-radius: 50px;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}
+.main-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* humberger div */
+.nav-hamburger {
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    padding: 0px 24px;
+    position: relative;
+    border-left: 1px solid rgb(233, 232, 238);
+    border-right: none;
+}
+
+/* div humberger icon container */
+.nav-hamburger-inner-container {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    cursor: inherit;
+}
+
+.nav-hamburger-inner-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgb(178, 174, 194);
+    stroke: none;
+}
+
+.nav-hamburger:hover .nav-hamburger-inner-container path {
+    fill: rgb(100, 63, 219);
+}
