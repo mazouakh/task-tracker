@@ -10,6 +10,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     ButtonComponent,
     TasksComponent,
     TaskItemComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    LoginPopupComponent
   ],
   imports: [
     BrowserModule,
