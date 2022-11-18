@@ -147,3 +147,25 @@ color: black;
 .nav-hamburger:hover .nav-hamburger-inner-container path {
     fill: rgb(100, 63, 219);
 }
+
+
+/* Loggin & signup buttons */
+
+.nav-item-login{
+    min-width: 250px;
+    justify-content: space-around;
+}
+
+.login-btn{
+    /* display: flex; */
+    /* align-items: center; */
+    /* font-weight: 700; */
+    font-size: 17px;
+    cursor: pointer;
+    /* line-height: 16px; */
+    color: #3C355C;
+    text-decoration: none;
+}
+.login-btn-label{
+    margin-left: 10px;
+}
