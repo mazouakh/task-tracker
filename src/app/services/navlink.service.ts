@@ -15,4 +15,5 @@ export class NavlinkService {
   getNavlinks(): Observable<Navlink[]>{
     return this.http.get<Navlink[]>(this.apiUrl);
   }
+
 }
