@@ -1,10 +1,15 @@
 
-<div class="center">
+<div 
+*ngIf="showLoginPopup"
+class="center">
     <!-- <input type="checkbox" id="show"> -->
     <!-- <label class="show-btn">View Form</label> -->
     <div class="login-form-container form-container">
     <!-- Close bottun -->
-    <label class="close-btn fas fa-times" title="close"></label>
+    <label 
+    (click)="toggleLoginPopup()"
+    class="close-btn fas fa-times" 
+    title="close"></label>
     <!-- Header -->
     <div class="form-title">
         Connectez Vous

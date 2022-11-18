@@ -6,8 +6,10 @@ import { Subject } from "rxjs";
 })
 export class UiService {
 
+  private showLoginPopup : boolean = false;
   private showAddTask: boolean = false;
   private subject = new Subject<any>();
+  private subject_login = new Subject<any>();
 
 
   constructor() { }
@@ -19,5 +21,14 @@ export class UiService {
 
   onToggle(){
     return this.subject.asObservable();
+  }
+
+  toggleLoginPopup(){
+    this.showLoginPopup = !this.showLoginPopup;
+    this.subject_login.next(this.showLoginPopup);
+  }
+
+  onLoginToggle(){
+    return this.subject_login.asObservable();
   }
 }
