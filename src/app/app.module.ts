@@ -12,6 +12,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavlinkComponent } from './components/navlink/navlink.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavlinkComponent } from './components/navlink/navlink.component';
     TaskItemComponent,
     AddTaskComponent,
     NavbarComponent,
-    NavlinkComponent
+    NavlinkComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,
