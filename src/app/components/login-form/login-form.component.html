@@ -1,0 +1,71 @@
+<div class="form-container">
+    <h5 class="form-title">Connectez Vous</h5>
+    <!-- <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p> -->
+    <form action="#">
+        <div class="data">
+            <input 
+            required
+            pattern="^[A-Za-z0-9+_.-]+@+(.+)+\.+(.+)$"
+            ngModel
+            name="email" 
+            #email="ngModel"
+            type="email"
+            placeholder="Email">
+        </div>
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+            <ul>
+                <li
+                *ngIf="email.errors?.['required']">
+                The email is required.
+                </li>
+                <li
+                *ngIf="email.errors?.['pattern']">
+                Please enter a valid email adresse.
+                </li>
+            </ul>
+        </div>
+        <!-- <br> -->
+        <div class="data">
+            <input 
+            required
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{0,}"
+            ngModel
+            name="pass" 
+            #pass="ngModel"
+            type="password"
+            placeholder="Mot de passe">
+        </div>
+        <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid">
+            <ul>
+                <li
+                *ngIf="pass.errors?.['required']">
+                The password is required.
+                </li>
+                <li
+                *ngIf="pass.errors?.['pattern']">
+                The password should have at least 1 uppercase 1 lowercase and 1 number.
+                </li>
+                <li
+                *ngIf="pass.errors?.['minlength']">
+                The password should be at least {{pass.errors?.['minlength'].requiredLength}} characters.
+                </li>
+            </ul>
+        </div>
+        <br>
+        <!-- forgot password ? -->
+        <div class="forgot-pass">
+            <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <!-- login button -->
+        <div class="btn">
+            <!-- <div class="inner"></div> -->
+            <button type="submit">Connexion</button>
+        </div>
+        <!-- Not a member? -->
+        <div class="signup-link">
+            Pas encore membre? <span (click)="showSigninForm()">Inscrivez vous</span>
+        </div>
+    </form>
+
+</div>

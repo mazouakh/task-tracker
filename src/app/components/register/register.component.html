@@ -1,0 +1,29 @@
+<div class="register-page-container">
+    <!-- partial:index.partial.html -->
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>Task <br> Tracker</h1>
+                <br><br>
+                <span>
+                    <p>Calendrier intelligent pour la gestion des taches et l'amélioration de productivité</p>
+                    <ul>
+                        <li>Fonctionalité 1</li>
+                        <li>Fonctionalité 2</li>
+                        <li>Fonctionalité 3</li>
+                    </ul>
+                </span>
+                <br>
+            </div>
+        </div>
+
+        <div class="right form-container">
+            <app-signup-form *ngIf="!isAlreadyMember"></app-signup-form>
+            <app-login-form *ngIf="isAlreadyMember"></app-login-form>
+            
+
+        </div>
+
+    </div>
+    <!-- partial -->
+</div>
