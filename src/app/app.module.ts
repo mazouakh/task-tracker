@@ -12,6 +12,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavlinkComponent } from './components/navlink/navlink.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 
 
@@ -25,7 +26,8 @@ import { LoginPopupComponent } from './components/login-popup/login-popup.compon
     AddTaskComponent,
     NavbarComponent,
     NavlinkComponent,
-    LoginPopupComponent
+    LoginPopupComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,
