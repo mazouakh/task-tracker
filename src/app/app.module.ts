@@ -12,6 +12,9 @@ import { MainAppComponent } from './components/main-app/main-app.component';
 import { MainAppModule } from './components/main-app/main-app.module';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavlinkComponent } from './components/navlink/navlink.component';
+import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 
 const appRoutes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -22,9 +25,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    SignupFormComponent,
     RegisterComponent,
-    LoginFormComponent
+    SignupFormComponent,
+    LoginFormComponent,
+    // LoginPopupComponent,
+    // LandingPageComponent,
+    // NavbarComponent,
+    // NavlinkComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,7 @@ const appRoutes: Routes = [
     MainAppModule,
     RouterModule.forRoot(appRoutes)
   ],
+  exports:[],
   providers: [],
   bootstrap: [AppComponent]
 })

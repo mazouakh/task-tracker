@@ -9,11 +9,16 @@ import { Navlink } from "../Navlink";
 export class NavlinkService {
 
   private apiUrl = "http://localhost:5000/navlinks";
+  private apiGuestUrl = "http://localhost:5000/guest-navlinks"
 
   constructor(private http:HttpClient) { }
 
   getNavlinks(): Observable<Navlink[]>{
     return this.http.get<Navlink[]>(this.apiUrl);
+  }
+
+  getGuestNavlinks(){
+    return this.http.get<Navlink[]>(this.apiGuestUrl);
   }
 
 }

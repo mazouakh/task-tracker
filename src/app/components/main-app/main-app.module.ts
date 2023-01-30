@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from 'src/app/app.component';
+import { AppModule } from 'src/app/app.module';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { ButtonComponent } from '../button/button.component';
 
 import { HeaderComponent } from '../header/header.component';
+import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { LoginPopupComponent } from '../login-popup/login-popup.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NavlinkComponent } from '../navlink/navlink.component';
@@ -20,9 +22,11 @@ import { MainAppComponent } from './main-app.component';
         BrowserModule,
         FontAwesomeModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        // AppModule
     ],
     declarations: [
+        // AppComponent,
         MainAppComponent, 
         NavbarComponent, 
         NavlinkComponent,
@@ -32,8 +36,10 @@ import { MainAppComponent } from './main-app.component';
         TasksComponent,
         ButtonComponent,
         TaskItemComponent,
-        AddTaskComponent
+        AddTaskComponent,
+        LandingPageComponent
     ],
+    exports:[],
 
     bootstrap: [MainAppComponent]
   })

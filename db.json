@@ -46,5 +46,27 @@
       "icon": "fa-certificate",
       "route": "/achievements"
     }
+  ],
+  "guest-navlinks": [
+    {
+      "text": "Fonctionalités",
+      "icon": "fa-calendar",
+      "route": "#features"
+    },
+    {
+      "text": "Reviews",
+      "icon": "fa-note-sticky",
+      "route": "#reviews"
+    },
+    {
+      "text": "Tarifs",
+      "icon": "fa-chart-line",
+      "route": "#prices"
+    },
+    {
+      "text": "Nous Contacter",
+      "icon": "fa-certificate",
+      "route": "#contact"
+    }
   ]
 }
