@@ -4,25 +4,29 @@
       "id": 1,
       "text": "Doctors Appointment",
       "day": "May 5th at 2:30pm",
-      "reminder": true
+      "reminder": true,
+      "uid": 0
     },
     {
       "id": 2,
       "text": "Meeting at School",
       "day": "May 6th at 1:30pm",
-      "reminder": true
+      "reminder": true,
+      "uid": 0
     },
     {
       "id": 3,
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": false,
+      "uid": 0
     },
     {
+      "id": 4,
       "text": "Finish Angular Course",
       "day": "Oct 10 at 11pm",
       "reminder": true,
-      "id": 4
+      "uid": 0
     }
   ],
   "navlinks": [
@@ -67,6 +71,22 @@
       "text": "Nous Contacter",
       "icon": "fa-certificate",
       "route": "#contact"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "nom": "Zouakh",
+      "prenom": "Mebarek",
+      "email": "admin@task-tracker.fr",
+      "password": "admin"
+    },
+    {
+      "nom": "Zouakh",
+      "prenom": "Mebarek",
+      "email": "zouakh.abd@gmail.com",
+      "password": "test",
+      "id": 1
     }
   ]
 }

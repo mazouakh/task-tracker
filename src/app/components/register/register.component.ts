@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faL } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { RegisterService } from 'src/app/services/register.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +12,11 @@ export class RegisterComponent implements OnInit {
 
 
 
-  isAlreadyMember : boolean = false;
+  isAlreadyMemberLinkClicked : boolean = false;
   subscription: Subscription;
 
-  constructor(private registerService: RegisterService) {
-    this.subscription = registerService.onSetIsAlreadyMember().subscribe((value: boolean) => (this.isAlreadyMember = value))
+  constructor(private authService: AuthService) {
+    this.subscription = authService.onSetIsAlreadyMember().subscribe((value: boolean) => (this.isAlreadyMemberLinkClicked = value))
    }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from 'src/app/services/register.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,12 +8,44 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private registerService: RegisterService) { }
+  // Attributes
+  email!: string;
+  password!: string;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.login();
+  }
+
+  
+  isPasswordInCorrect: boolean = false;
+  isUserUnfound: boolean = false;
+
+  login(){
+    this.authService.getUserByEmail(this.email).subscribe((userFound) => {
+      
+      if (userFound.length == 0) {
+        this.isUserUnfound = true;
+        this.isPasswordInCorrect = false;
+        return;
+      }
+      
+      this.isUserUnfound = false;
+      if (userFound[0].password === this.password) {
+        this.isPasswordInCorrect = false;
+        // TODO Login in
+
+      }else{
+        this.isPasswordInCorrect = true;
+      }
+    });
+  }
+  
   showSigninForm(){
-    this.registerService.setIsAlreadyMember(false);
+    this.authService.setIsAlreadyMember(false);
   }
 }

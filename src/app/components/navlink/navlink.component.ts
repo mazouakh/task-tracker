@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Navlink } from "../../Navlink";
+import { Navlink } from "../../Interfaces/Navlink";
 import { faCalendar, faNoteSticky, faChartLine, faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { NavlinkService } from "../../services/navlink.service";
 @Component({

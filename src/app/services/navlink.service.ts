@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Navlink } from "../Navlink";
+import { Navlink } from "../Interfaces/Navlink";
 
 @Injectable({
   providedIn: 'root'

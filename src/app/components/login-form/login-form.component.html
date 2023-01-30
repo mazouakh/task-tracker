@@ -1,25 +1,25 @@
 <div class="form-container">
     <h5 class="form-title">Connectez Vous</h5>
     <!-- <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p> -->
-    <form action="#">
+    <form action="#" (ngSubmit)="onSubmit()">
         <div class="data">
             <input 
             required
             pattern="^[A-Za-z0-9+_.-]+@+(.+)+\.+(.+)$"
-            ngModel
+            [(ngModel)] = "email"
             name="email" 
-            #email="ngModel"
+            #emailInput="ngModel"
             type="email"
             placeholder="Email">
         </div>
-        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        <div class="alert alert-danger" *ngIf="emailInput.touched && !emailInput.valid">
             <ul>
                 <li
-                *ngIf="email.errors?.['required']">
+                *ngIf="emailInput.errors?.['required']">
                 The email is required.
                 </li>
                 <li
-                *ngIf="email.errors?.['pattern']">
+                *ngIf="emailInput.errors?.['pattern']">
                 Please enter a valid email adresse.
                 </li>
             </ul>
@@ -28,30 +28,33 @@
         <div class="data">
             <input 
             required
-            minlength="8"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{0,}"
-            ngModel
+            [(ngModel)]="password"
             name="pass" 
-            #pass="ngModel"
+            #passInput="ngModel"
             type="password"
             placeholder="Mot de passe">
         </div>
-        <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid">
+        <div class="alert alert-danger" *ngIf="passInput.touched && !passInput.valid">
             <ul>
                 <li
-                *ngIf="pass.errors?.['required']">
+                *ngIf="passInput.errors?.['required']">
                 The password is required.
-                </li>
-                <li
-                *ngIf="pass.errors?.['pattern']">
-                The password should have at least 1 uppercase 1 lowercase and 1 number.
-                </li>
-                <li
-                *ngIf="pass.errors?.['minlength']">
-                The password should be at least {{pass.errors?.['minlength'].requiredLength}} characters.
                 </li>
             </ul>
         </div>
+
+        <br>
+
+        <div class="alert alert-danger" *ngIf="isPasswordInCorrect">
+            <span>Le mot de pass que vous avez entré est incorrect</span>
+        </div>
+
+        <br>
+
+        <div class="alert alert-danger" *ngIf="isUserUnfound">
+            <span>Aucun utilisateur n'est enregistré avec cette adresse email.</span>
+        </div>
+
         <br>
         <!-- forgot password ? -->
         <div class="forgot-pass">

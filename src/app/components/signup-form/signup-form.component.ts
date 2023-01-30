@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from 'src/app/services/register.service';
+import { Observable, tap } from 'rxjs';
+import { User } from 'src/app/Interfaces/User';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -8,13 +10,63 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class SignupFormComponent implements OnInit {
 
-  constructor(private registerService: RegisterService) { }
+  // Form Data
+  nom!: string;
+  prenom!: string;
+  email!: string;
+  password!: string;
+  passConfirm!: string;
+
+  passMismatch : boolean = false;
+  alreadyRegistered : boolean = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  
-  showLoginForm(){
-    this.registerService.setIsAlreadyMember(true);
+  onSubmit(){
+    // verifier que les deux mot de pass correspendent
+    if (this.passConfirm != this.password) {
+      this.passMismatch = true;
+      return;
+    }
+    this.passMismatch = false;
+
+    // creating a User instance with the form values
+    const user : User = {
+      nom: this.nom,
+      prenom: this.prenom,
+      email: this.email,
+      password: this.password
+    };
+
+    this.registerUser(user);
   }
+
+
+  showLoginForm(){
+    this.authService.setIsAlreadyMember(true);
+  }
+
+  registerUser(user:User){
+    // First check if user already registered
+    this.authService.getUser(user).subscribe((userFound) => {
+      if (userFound.length > 0) {
+        console.log("already registered");
+        console.log("userFound : ", userFound);
+        this.alreadyRegistered = true;
+        return;
+      }
+      // If not then register the new user
+      this.alreadyRegistered = false;
+      this.authService.addUser(user).subscribe((addedUser) => (console.log(addedUser)));
+
+      // TODO Log him in
+
+    });
+    
+  }
+
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
-import { Navlink } from "../../Navlink";
+import { Navlink } from "../../Interfaces/Navlink";
 import { NavlinkService } from "../../services/navlink.service";
 
 @Component({
