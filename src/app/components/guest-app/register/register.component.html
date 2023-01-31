@@ -1,0 +1,28 @@
+<div class="register-page-container">
+    <!-- partial:index.partial.html -->
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>Task <br> Tracker</h1>
+                <br><br>
+                <span>
+                    <p>Gestionaire de taches intelligent pour l'amélioration de productivité</p>
+                    <ul>
+                        <li>Ajouter vos taches du quotidien</li>
+                        <li>Recevez des notification pour vous rappeler des taches à venir</li>
+                        <li>Accumuler des points et debloquez des badges de succes</li>
+                    </ul>
+                </span>
+                <br>
+            </div>
+        </div>
+
+        <div class="right form-container">
+            <app-signup-form *ngIf="!isAlreadyMemberLinkClicked" (displayLoginForm)="setIsAlreadyMember(true)"></app-signup-form>
+            <app-login-form *ngIf="isAlreadyMemberLinkClicked" (displaySignupForm)="setIsAlreadyMember(false)"></app-login-form>
+
+        </div>
+
+    </div>
+    <!-- partial -->
+</div>

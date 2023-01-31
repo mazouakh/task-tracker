@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { UiService } from 'src/app/services/ui.service';
-import { Navlink } from "../../Navlink";
+import { Navlink } from "../../Interfaces/Navlink";
 import { NavlinkService } from "../../services/navlink.service";
 
 @Component({
@@ -10,18 +11,32 @@ import { NavlinkService } from "../../services/navlink.service";
 })
 export class NavbarComponent implements OnInit {
 
+  @Output() logoutEvent: EventEmitter<any> = new EventEmitter()
+
   title : string = "Task Manager";
   navlinks : Navlink[] = [];
   loggedIn : boolean = false; // TODO recieve this info from an appropriate service that handles it
 
-  constructor(private navlinkService : NavlinkService, private uiService: UiService) { }
+  constructor(
+    private navlinkService : NavlinkService, 
+    private uiService: UiService, 
+    private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.navlinkService.getNavlinks().subscribe((links) => (this.navlinks = links));
-    console.log(this.navlinks);
+    if (this.authService.isLoggedIn()) {
+      this.navlinkService.getNavlinks().subscribe((links) => (this.navlinks = links));
+    }else{
+      this.navlinkService.getGuestNavlinks().subscribe((links) => (this.navlinks = links));
+    }
+
+    this.loggedIn = this.authService.isLoggedIn();
   }
 
   toggleLoginPopup(){
     this.uiService.toggleLoginPopup();
+  }
+
+  logout(){
+    this.logoutEvent.emit();
   }
 }

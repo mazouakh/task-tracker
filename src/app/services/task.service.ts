@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from "../Task";
+import { Task } from "../Interfaces/Task";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -10,21 +10,20 @@ export class TaskService {
 
   private apiUrl = "http://localhost:5000/tasks";
   
-  // TODO trying to use remote json server
-  // private apiUrl = "https://my-json-server.typicode.com/mazouakh/task-tracker/tasks";
-  // private apiUrl = "https://api.jsonbin.io/v3/b/6348881e0e6a79321e278e35/latest";
   
   private headers : HttpHeaders= new HttpHeaders()
   .set("Content-Type", "application/json");
-  // .set("X-Bin-Meta", "false")
-  // .set('X-JSON-Path', '$..tasks[*]');
 
 
   constructor(private http:HttpClient) { }
 
   // function that retuns the list of mock tasks as an observable
-  getTask(): Observable<Task[]>{
+  getTasks(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl, {'headers': this.headers});
+  }
+
+  getTasksByUserEmail(email:string): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl + "?user="+email, {'headers': this.headers});
   }
 
   deleteTask(task: Task): Observable<Task>{

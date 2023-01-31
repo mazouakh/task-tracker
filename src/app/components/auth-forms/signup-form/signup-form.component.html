@@ -1,0 +1,119 @@
+<div class="form-container">
+    <h5 class="form-title">Inscription</h5>
+    <!-- <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p> -->
+    <form action="#" (ngSubmit)="onSubmit()">
+        <div class="data">
+            <input required  
+            [(ngModel)]="nom" 
+            name="nom" 
+            #nomInput="ngModel" 
+            placeholder="Nom" 
+            type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="nomInput.touched && !nomInput.valid">
+            Le nom est requis
+        </div>
+        <div class="data">
+            <input 
+            required  
+            [(ngModel)]="prenom" 
+            #prenomInput="ngModel" 
+            type="text" 
+            name="prenom" 
+            placeholder="Prénom">
+        </div>
+        <div class="alert alert-danger" *ngIf="prenomInput.touched && !prenomInput.valid">
+            Le Prénom est requis
+        </div>
+        <div class="data">
+            <input 
+            required 
+            pattern="^[A-Za-z0-9+_.-]+@+(.+)+\.+(.+)$"
+            [(ngModel)]="email" 
+            name="email" 
+            #emailInput="ngModel" 
+            type="email" 
+            placeholder="Email">
+        </div>
+        <div class="alert alert-danger" *ngIf="emailInput.touched && !emailInput.valid">
+            <ul>
+                <li
+                *ngIf="emailInput.errors?.['required']">
+                L'email est required.
+                </li>
+                <li
+                *ngIf="emailInput.errors?.['pattern']">
+                Veuillez entrer une adresse email valide.
+                </li>
+            </ul>
+        </div>
+        <!-- <br> -->
+        <div class="data">
+            <input 
+            required  
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{0,}"
+            [(ngModel)]="password" 
+            name="pass" 
+            #passInput="ngModel" 
+            type="password" 
+            placeholder="Mot de passe">
+        </div>
+        <div class="alert alert-danger" *ngIf="passInput.touched && !passInput.valid">
+            <ul>
+                <li 
+                *ngIf="passInput.errors?.['required']">
+                Le mot de passe est required.
+                </li>
+                <li
+                *ngIf="passInput.errors?.['pattern']">
+                Le mot de pass doit contenir au moins 1 majuscule 1 minuscule et 1 chiffre.
+                </li>
+                <li
+                *ngIf="passInput.errors?.['minlength']">
+                Le mot de pass doit etre constitué d'au moins {{passInput.errors?.['minlength'].requiredLength}} characters.
+                </li>
+            </ul>
+        </div>
+        <div class="data">
+            <input 
+            required  
+            [(ngModel)]="passConfirm" 
+            name="passConfirm" 
+            #passConfirmInput="ngModel" 
+            type="password" 
+            placeholder="Confirmer votre mot de passe">
+        </div>
+        <div class="alert alert-danger" *ngIf="passConfirmInput.touched && (!passConfirmInput.valid || passMismatch)">
+            <ul>
+                <li 
+                *ngIf="passConfirmInput.errors?.['required']">
+                Veuillez confirmer le mot de passe.
+                </li>
+                <li 
+                *ngIf="passMismatch">
+                Le mot de passe ne correspend pas à celui rentrer plus haut.
+                </li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="alert alert-danger" *ngIf="alreadyRegistered">
+            <span>Un utilisateur avec cette adresse mail est déja inscrit.</span>
+        </div>
+
+        <br>
+
+        <div class="btn btn-block">
+            <!-- Change the button -->
+            <button type="submit">S'inscrire</button>
+        </div>
+        
+        <!-- Already a member? -->
+        <div class="signup-link">
+            Déja membre? <span (click)="showLoginForm()">Connectez vous</span>
+        </div>
+    </form>
+
+</div>

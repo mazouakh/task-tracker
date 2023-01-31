@@ -19,7 +19,7 @@
                     <img class="user-image" src="../../../assets/img/user.png">
                 </div>
                 <div class="nav-hamburger">
-                    <div class="nav-hamburger-inner-container">
+                    <div class="nav-hamburger-inner-container" (click)="logout()">
                         <i class="fa-solid fa-bars"></i>
                     </div>
                 </div>
@@ -27,8 +27,10 @@
             <div 
             *ngIf="!loggedIn"
             class="nav-item nav-item-login">
-                <div (click)="toggleLoginPopup()" class="login-btn"><i class="fa-solid fa-unlock-keyhole"></i><span class="login-btn-label">Login</span></div>
-                <a href="#" class="login-btn"><i class="fa-solid fa-user-plus"></i><span class="login-btn-label">Signup</span></a>
+                <div (click)="toggleLoginPopup()" class="login-btn">
+                    <i class="fa-solid fa-unlock-keyhole"></i><span class="login-btn-label">Login</span>
+                </div>
+                <a href="/auth" class="login-btn"><i class="fa-solid fa-user-plus"></i><span class="login-btn-label">Signup</span></a>
             </div>
         </nav>
     </div>
