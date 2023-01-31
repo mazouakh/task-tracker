@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-main-app',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainAppComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.authService.clearLocalStorage();
+    this.router.navigate(['/']);
   }
 
 }

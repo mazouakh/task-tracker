@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,12 +10,16 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginFormComponent implements OnInit {
 
   // Attributes
+  @Output() displaySignupForm : EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  // Form Values
   email!: string;
   password!: string;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.clearLocalStorage();
   }
 
   onSubmit(){
@@ -37,8 +42,8 @@ export class LoginFormComponent implements OnInit {
       this.isUserUnfound = false;
       if (userFound[0].password === this.password) {
         this.isPasswordInCorrect = false;
-        // TODO Login in
-
+        // Login in
+        this.authService.login(userFound[0])
       }else{
         this.isPasswordInCorrect = true;
       }
@@ -46,6 +51,6 @@ export class LoginFormComponent implements OnInit {
   }
   
   showSigninForm(){
-    this.authService.setIsAlreadyMember(false);
+    this.displaySignupForm.emit(true);
   }
 }

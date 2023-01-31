@@ -1,12 +1,8 @@
 <div class="main-container">
 
     <div class="header-container">
-        <app-navbar></app-navbar>
+        <app-navbar (logoutEvent)="logout()"></app-navbar>
     </div>  
-
-    <div class="login-popup-container">
-        <app-login-popup></app-login-popup>
-    </div>
 
     <div class="container task-container">
         <app-header></app-header>

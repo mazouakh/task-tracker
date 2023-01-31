@@ -3,19 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AppComponent } from 'src/app/app.component';
 import { AppModule } from 'src/app/app.module';
-import { AddTaskComponent } from '../add-task/add-task.component';
-import { ButtonComponent } from '../button/button.component';
+import { AuthGuard } from "../../guards/auth.guard";
 
-import { HeaderComponent } from '../header/header.component';
-import { LandingPageComponent } from '../landing-page/landing-page.component';
-import { LoginPopupComponent } from '../login-popup/login-popup.component';
+import { AddTaskComponent } from '../tasks/add-task/add-task.component';
+import { ButtonComponent } from '../tasks/button/button.component';
+import { AppComponent } from 'src/app/app.component';
+import { HeaderComponent } from '../tasks/header/header.component';
+import { LandingPageComponent } from '../guest-app/landing-page/landing-page.component';
+import { LoginPopupComponent } from '../auth-forms/login-popup/login-popup.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { NavlinkComponent } from '../navlink/navlink.component';
-import { TaskItemComponent } from '../task-item/task-item.component';
+import { NavlinkComponent } from '../navbar/navlink/navlink.component';
+import { TaskItemComponent } from '../tasks/task-item/task-item.component';
 import { TasksComponent } from '../tasks/tasks.component';
 import { MainAppComponent } from './main-app.component';
+import { AuthFormsModule } from '../auth-forms/auth-forms.module';
+import { TasksModule } from '../tasks/tasks.module';
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
     imports: [
@@ -23,23 +27,14 @@ import { MainAppComponent } from './main-app.component';
         FontAwesomeModule,
         HttpClientModule,
         FormsModule,
-        // AppModule
+        TasksModule,
+        NavbarModule,
     ],
     declarations: [
-        // AppComponent,
         MainAppComponent, 
-        NavbarComponent, 
-        NavlinkComponent,
-        // to move to App Module
-        LoginPopupComponent, 
-        HeaderComponent, 
-        TasksComponent,
-        ButtonComponent,
-        TaskItemComponent,
-        AddTaskComponent,
-        LandingPageComponent
     ],
     exports:[],
+    providers:[AuthGuard],
 
     bootstrap: [MainAppComponent]
   })

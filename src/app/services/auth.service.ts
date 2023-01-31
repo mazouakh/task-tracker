@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from "rxjs";
 import { User } from '../Interfaces/User';
 
@@ -9,22 +10,30 @@ import { User } from '../Interfaces/User';
 })
 export class AuthService {
 
-  // Toggle between signup & login forms
-  private isAlreadyMemberLinkClicked : boolean = false;
-  private subject = new Subject<any>();
+  constructor(private http:HttpClient, private router:Router) { }
 
-  constructor(private http:HttpClient) { }
 
-  setIsAlreadyMember(value : boolean){
-    this.isAlreadyMemberLinkClicked = value;
-    this.subject.next(this.isAlreadyMemberLinkClicked);
+  // Create local storage with user data
+  login(user:User){
+    localStorage.setItem('isLoggedIn','true');    
+    localStorage.setItem('email', user.email);
+    this.router.navigate(['/app']);     
   }
 
-  onSetIsAlreadyMember(){
-    return this.subject.asObservable();
-  }
-  // End toggle between signup & login forms
+  // Clear the local storage on logout
+  clearLocalStorage() :void {    
+    localStorage.setItem('isLoggedIn','false');    
+    localStorage.removeItem('email');    
 
+  } 
+
+  // check if logged in
+  isLoggedIn(){
+    return (localStorage.getItem('isLoggedIn') == 'true');
+  }
+
+
+  // Restful API
 
   private apiUrl = "http://localhost:5000/users";
   private headers : HttpHeaders= new HttpHeaders()
@@ -44,4 +53,6 @@ export class AuthService {
   addUser(user: User): Observable<User>{
     return this.http.post<User>(this.apiUrl, user, {'headers': this.headers});
   }
+
+  // End Restful API
 }

@@ -18,8 +18,12 @@ export class TaskService {
   constructor(private http:HttpClient) { }
 
   // function that retuns the list of mock tasks as an observable
-  getTask(): Observable<Task[]>{
+  getTasks(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl, {'headers': this.headers});
+  }
+
+  getTasksByUserEmail(email:string): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl + "?user="+email, {'headers': this.headers});
   }
 
   deleteTask(task: Task): Observable<Task>{

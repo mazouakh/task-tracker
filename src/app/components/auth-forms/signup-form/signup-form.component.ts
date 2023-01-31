@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { User } from 'src/app/Interfaces/User';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent implements OnInit {
+
+  @Output() displayLoginForm : EventEmitter<boolean> = new EventEmitter<boolean>();
 
   // Form Data
   nom!: string;
@@ -46,7 +48,8 @@ export class SignupFormComponent implements OnInit {
 
 
   showLoginForm(){
-    this.authService.setIsAlreadyMember(true);
+    this.displayLoginForm.emit(true);
+    // this.authService.setIsAlreadyMember(true);
   }
 
   registerUser(user:User){
@@ -60,9 +63,11 @@ export class SignupFormComponent implements OnInit {
       }
       // If not then register the new user
       this.alreadyRegistered = false;
-      this.authService.addUser(user).subscribe((addedUser) => (console.log(addedUser)));
-
-      // TODO Log him in
+      this.authService.addUser(user).subscribe(() => {
+        
+        // Log him in
+        this.authService.login(user)
+      });
 
     });
     

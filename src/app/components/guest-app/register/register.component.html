@@ -18,8 +18,9 @@
         </div>
 
         <div class="right form-container">
-            <app-signup-form *ngIf="!isAlreadyMemberLinkClicked"></app-signup-form>
-            <app-login-form *ngIf="isAlreadyMemberLinkClicked"></app-login-form>
+            <app-signup-form *ngIf="!isAlreadyMemberLinkClicked" (displayLoginForm)="setIsAlreadyMember(true)"></app-signup-form>
+            <app-login-form *ngIf="isAlreadyMemberLinkClicked" (displaySignupForm)="setIsAlreadyMember(false)"></app-login-form>
+
         </div>
 
     </div>

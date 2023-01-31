@@ -15,7 +15,7 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
     // subscribing to the observable and getting the return value (tasks) once it's loaded
-    this.taskService.getTask().subscribe((tasks) => (this.tasks = tasks));
+    this.taskService.getTasksByUserEmail(localStorage.getItem("email")!).subscribe((tasks) => (this.tasks = tasks));
   }
 
   deleteTask(task: Task){

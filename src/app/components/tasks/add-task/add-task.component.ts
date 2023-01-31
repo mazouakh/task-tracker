@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Task } from "../../Interfaces/Task";
-import { UiService } from "../../services/ui.service";
+import { Task } from "../../../Interfaces/Task";
+import { UiService } from "../../../services/ui.service";
 import { Subscription } from "rxjs";
 @Component({
   selector: 'app-add-task',
@@ -39,11 +39,12 @@ export class AddTaskComponent implements OnInit {
       return
     }
 
-    // create a new task with the curent form values
-    const newTask={
+    // create a new task with the current form values
+    var newTask:Task={
       text: this.text,
       day: this.day,
-      reminder: this.reminder
+      reminder: this.reminder,
+      user: localStorage.getItem("email")!
     }
 
     //TODO emit an event
