@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Navlink } from "../../Interfaces/Navlink";
@@ -11,11 +11,15 @@ import { NavlinkService } from "../../services/navlink.service";
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() logoutEvent: EventEmitter<any> = new EventEmitter()
 
   title : string = "Task Manager";
   navlinks : Navlink[] = [];
-  loggedIn : boolean = false; // TODO recieve this info from an appropriate service that handles it
+  displayPopup!: boolean; // for displaying the hamburger menu popup
+  
+  // Info Utilisateur
+  loggedIn! : boolean;
+  userNom!: string;
+  userPrenom!: string;
 
   constructor(
     private navlinkService : NavlinkService, 
@@ -23,20 +27,39 @@ export class NavbarComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit(): void {
+
     if (this.authService.isLoggedIn()) {
       this.navlinkService.getNavlinks().subscribe((links) => (this.navlinks = links));
+      this.getUserName();
     }else{
       this.navlinkService.getGuestNavlinks().subscribe((links) => (this.navlinks = links));
     }
 
-    this.loggedIn = this.authService.isLoggedIn();
   }
 
   toggleLoginPopup(){
     this.uiService.toggleLoginPopup();
   }
 
-  logout(){
-    this.logoutEvent.emit();
+  toggleHambergerPopup(){
+    this.displayPopup = !this.displayPopup;
+  }
+
+  isLoggedIn(): boolean{
+    return this.authService.isLoggedIn();
+  }
+
+  getUserName(){
+    const logedinUserEmail = localStorage.getItem('email');
+
+    if (logedinUserEmail == null) {
+      console.log("didn't get any loggedin user");
+      return;
+    }
+    
+    this.authService.getUserByEmail(logedinUserEmail).subscribe((user) => {
+      this.userNom = user[0].nom;
+      this.userPrenom = user[0].prenom;
+    });
   }
 }
