@@ -19,6 +19,7 @@ import { ProfilesComponent } from './components/profiles/profiles.component';
 import { LoginPopupComponent } from './components/auth-forms/login-popup/login-popup.component';
 import { AuthFormsModule } from './components/auth-forms/auth-forms.module';
 import { GuestAppModule } from './components/guest-app/guest-app.module';
+import { NavbarModule } from './components/navbar/navbar.module';
 
 const appRoutes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     MainAppModule,
     AuthFormsModule,
     GuestAppModule,
+    NavbarModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports:[],

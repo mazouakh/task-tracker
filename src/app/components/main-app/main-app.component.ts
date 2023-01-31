@@ -10,14 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class MainAppComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  logout(){
-    this.authService.clearLocalStorage();
-    this.router.navigate(['/']);
   }
 
 }

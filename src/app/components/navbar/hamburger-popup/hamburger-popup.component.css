@@ -1,0 +1,136 @@
+.nav-hamburger-popup {
+    border-radius: 10px;
+    filter: drop-shadow(rgba(33, 21, 81, 0.15) 0px 10px 26px);
+    background-color: white;
+    position: absolute;
+    right: 8px!important;
+    top: calc(100% + 8px)!important;
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+    inset: unset;
+    z-index: 3;
+    color: rgb(77, 67, 117);
+    font-size: 13px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    cursor: initial;
+}
+
+.nav-hamburger-popup .inner-container{
+    width: 230px;
+    max-width: 230px;
+}
+
+/* Links */
+
+.nav-hamburger-popup .inner-container .links {
+    border-bottom: 1px solid rgb(233, 232, 238);
+    display: flex;
+    flex-flow: column;
+    padding: 15px 22px 0px;
+}
+
+.nav-hamburger-popup .inner-container .links 
+.link {
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.nav-hamburger-popup .inner-container .links 
+.link .link-inner-container {
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(77, 67, 117);
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+    line-height: 24px;
+    position: relative;
+    user-select: none;
+}
+
+.link-inner-container:hover {
+    color: rgb(100, 63, 219)!important;
+}
+
+.nav-hamburger-popup .inner-container .links 
+.link .link-inner-container .icon-container{
+    margin-right: 10px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: inherit;
+}
+
+.nav-hamburger-popup .inner-container .links 
+.link .link-inner-container .icon-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgb(178, 174, 194);
+    stroke: none;
+}
+
+/* End Links */
+
+/* Logout */
+
+.nav-hamburger-popup .inner-container .logout {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 15px 22px;
+    flex-shrink: 1;
+}
+.logout .user-name {
+    font-size: 14px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0px;
+}
+
+.logout .logout-link {
+    display: flex;
+    margin-left: auto;
+}
+
+.logout-link .link-inner-container {
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.logout-link .icon-container {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: bottom;
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.logout-link svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: rgb(178, 174, 194);
+}
+
+.logout .logout-button {
+    margin-left: 5px;
+}
+
+.logout .logout-button:hover {
+    color: rgb(100, 63, 219);
+}

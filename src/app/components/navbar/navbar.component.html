@@ -13,19 +13,27 @@
                 </app-navlink>
             </div>
             <div 
-            *ngIf="loggedIn"
+            *ngIf="isLoggedIn()"
             class="nav-item">
+                <div class="navbar-user-name">
+                    <span>Welcome {{userPrenom}}</span>
+                </div>
                 <div class="nav-user-pic">
                     <img class="user-image" src="../../../assets/img/user.png">
                 </div>
-                <div class="nav-hamburger">
-                    <div class="nav-hamburger-inner-container" (click)="logout()">
+                <div class="nav-hamburger" (click)="toggleHambergerPopup()">
+                    <div class="nav-hamburger-inner-container">
                         <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="nav-hamburger-popup" *ngIf="displayPopup">
+                        <app-hamburger-popup 
+                        [userName]="userPrenom + ' ' +  userNom"
+                        (logoutEvent)="logout()"></app-hamburger-popup>
                     </div>
                 </div>
             </div>
             <div 
-            *ngIf="!loggedIn"
+            *ngIf="!isLoggedIn()"
             class="nav-item nav-item-login">
                 <div (click)="toggleLoginPopup()" class="login-btn">
                     <i class="fa-solid fa-unlock-keyhole"></i><span class="login-btn-label">Login</span>
