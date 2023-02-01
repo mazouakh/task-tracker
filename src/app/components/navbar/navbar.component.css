@@ -68,11 +68,18 @@ color: black;
     user-select: none;
   }
   
-.nav-item .logo{
+
+/* Logo */
+
+.logo{
     font-size: 20px;
     padding: 0 10px;
     font-weight: bold;
     color: rgb(77, 67, 117);
+}
+
+.logo a{
+    text-decoration: none;
 }
 
 /* <a> Tab Links inside first div */
