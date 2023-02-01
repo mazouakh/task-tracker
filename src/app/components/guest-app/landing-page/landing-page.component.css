@@ -307,6 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
+	height: 100vh;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	-webkit-justify-content: center;
@@ -327,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
 	object-fit: cover;
 }
 #section-slider1 .swiper-slide .slider-content{
-	z-index: 9;
+	z-index: 1;
 	top: 56px;
 	width: 100%;
 	position: relative;
