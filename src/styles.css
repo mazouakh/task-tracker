@@ -28,7 +28,7 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: rgb(100, 63, 219);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -45,11 +45,11 @@ body {
 .btn:active {
   transform: scale(0.98);
   color: white!important;
-  background-color: #000!important;
+  background-color: rgb(100, 63, 219)!important;
 }
 .btn:hover {
   color: white;
-  background-color: #000;
+  background-color: rgb(100, 63, 219);
 }
 
 .btn-block {
