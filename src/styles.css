@@ -53,6 +53,10 @@ body {
 .btn:active {
   transform: scale(0.98);
 }
+.btn:hover {
+  color: white;
+  background-color: #000;
+}
 
 .btn-block {
   display: block;

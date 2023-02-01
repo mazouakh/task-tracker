@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HamburgerPopupComponent } from './hamburger-popup.component';
+import { HamburgerPopupComponent } from './../../navbar/hamburger-popup/hamburger-popup.component';
 
 describe('HamburgerPopupComponent', () => {
   let component: HamburgerPopupComponent;
