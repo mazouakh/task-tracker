@@ -11,7 +11,6 @@ import { RegisterComponent } from './components/guest-app/register/register.comp
 import { LandingPageComponent } from './components/guest-app/landing-page/landing-page.component';
 import { MainAppComponent } from './components/main-app/main-app.component';
 import { MainAppModule } from './components/main-app/main-app.module';
-import { ProfilesComponent } from './components/profiles/profiles.component';
 import { AuthFormsModule } from './components/auth-forms/auth-forms.module';
 import { GuestAppModule } from './components/guest-app/guest-app.module';
 import { NavbarModule } from './components/navbar/navbar.module';
@@ -34,7 +33,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProfilesComponent,
     PageUnderConstructionComponent,
     PageNotFoundComponent,
   ],
