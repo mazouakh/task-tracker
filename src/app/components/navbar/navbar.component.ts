@@ -18,8 +18,8 @@ export class NavbarComponent implements OnInit {
   
   // Info Utilisateur
   loggedIn! : boolean;
-  userNom!: string;
-  userPrenom!: string;
+  userNom: string = "Doe";
+  userPrenom: string = "John";
 
   constructor(
     private navlinkService : NavlinkService, 

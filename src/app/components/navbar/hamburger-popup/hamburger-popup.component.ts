@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HamburgerPopupComponent implements OnInit {
 
   @Output() logoutEvent: EventEmitter<any> = new EventEmitter()
-  @Input() userName!: string;
+  @Input() userName: string = "Inconnue";
 
 
   constructor() { }

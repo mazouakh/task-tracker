@@ -38,22 +38,22 @@
   ],
   "navlinks": [
     {
-      "text": "Calendar",
+      "text": "Calendrier",
       "icon": "fa-calendar",
       "route": "/calendar"
     },
     {
-      "text": "Tasks",
+      "text": "Tâches",
       "icon": "fa-note-sticky",
       "route": "/app"
     },
     {
-      "text": "Reports",
+      "text": "Rapports",
       "icon": "fa-chart-line",
       "route": "/reports"
     },
     {
-      "text": "Achievements",
+      "text": "Réalisations",
       "icon": "fa-certificate",
       "route": "/achievements"
     }
@@ -65,7 +65,7 @@
       "route": "#features"
     },
     {
-      "text": "Reviews",
+      "text": "Commentaires",
       "icon": "fa-note-sticky",
       "route": "#reviews"
     },
