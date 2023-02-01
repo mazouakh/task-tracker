@@ -30,6 +30,8 @@ body {
 }
 .btn:active {
   transform: scale(0.98);
+  color: white!important;
+  background-color: #000!important;
 }
 .btn:hover {
   color: white;
