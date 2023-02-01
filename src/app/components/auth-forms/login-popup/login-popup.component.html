@@ -1,0 +1,17 @@
+<div 
+*ngIf="showLoginPopup"
+class="center">
+    <div class="login-form-container form-container">
+    
+        <!-- Close bottun -->
+        <label 
+        (click)="toggleLoginPopup()"
+        class="close-btn fas fa-times" 
+        title="close">
+        </label>
+        <!-- ./ Close bottun -->
+    
+        <app-login-form></app-login-form>
+    
+    </div>
+</div>

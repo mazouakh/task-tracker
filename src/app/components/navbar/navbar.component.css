@@ -68,11 +68,18 @@ color: black;
     user-select: none;
   }
   
-.nav-item .logo{
+
+/* Logo */
+
+.logo{
     font-size: 20px;
     padding: 0 10px;
     font-weight: bold;
     color: rgb(77, 67, 117);
+}
+
+.logo a{
+    text-decoration: none;
 }
 
 /* <a> Tab Links inside first div */
@@ -87,16 +94,14 @@ color: black;
 /* div user picture container */
 .nav-user-pic {
     position: relative;
-    flex-shrink: 0;
-    border-radius: 50px;
-    height: 32px;
-    width: 32px;
-    margin-right: 24px;
+    height: 100%;
+    padding: 0px 15px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
+    border-right: none;
 }
 
 /* img inside that div */
@@ -157,12 +162,8 @@ color: black;
 }
 
 .login-btn{
-    /* display: flex; */
-    /* align-items: center; */
-    /* font-weight: 700; */
     font-size: 17px;
     cursor: pointer;
-    /* line-height: 16px; */
     color: #3C355C;
     text-decoration: none;
 }

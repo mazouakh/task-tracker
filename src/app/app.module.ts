@@ -5,33 +5,21 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ButtonComponent } from './components/button/button.component';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { TaskItemComponent } from './components/task-item/task-item.component';
-import { AddTaskComponent } from './components/add-task/add-task.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { NavlinkComponent } from './components/navlink/navlink.component';
-import { LoginPopupComponent } from './components/login-popup/login-popup.component';
+import { NavbarModule } from './components/navbar/navbar.module';
+import { AuthFormsModule } from './components/auth-forms/auth-forms.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ButtonComponent,
-    TasksComponent,
-    TaskItemComponent,
-    AddTaskComponent,
-    NavbarComponent,
-    NavlinkComponent,
-    LoginPopupComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NavbarModule,
+    AuthFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
