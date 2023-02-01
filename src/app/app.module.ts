@@ -20,17 +20,28 @@ import { LoginPopupComponent } from './components/auth-forms/login-popup/login-p
 import { AuthFormsModule } from './components/auth-forms/auth-forms.module';
 import { GuestAppModule } from './components/guest-app/guest-app.module';
 import { NavbarModule } from './components/navbar/navbar.module';
+import { PageUnderConstructionComponent } from './components/page-under-construction/page-under-construction.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'auth', component: RegisterComponent},
-  {path: 'app', component: MainAppComponent, canActivate: [AuthGuard]}
+  {path: 'app', component: MainAppComponent, canActivate: [AuthGuard]},
+  // Not Available routes
+  {path: 'calendar', component: PageUnderConstructionComponent},
+  {path: 'reports', component: PageUnderConstructionComponent},
+  {path: 'achievements', component: PageUnderConstructionComponent},
+  {path: 'settings', component: PageUnderConstructionComponent},
+
+  {path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfilesComponent,
+    PageUnderConstructionComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
