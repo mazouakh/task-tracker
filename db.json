@@ -34,6 +34,20 @@
       "reminder": true,
       "user": "admin@task-tracker.fr",
       "id": 5
+    },
+    {
+      "text": "Faire le ménage",
+      "day": "2023-02-02T08:30",
+      "reminder": true,
+      "user": "lilia@univ.fr",
+      "id": 6
+    },
+    {
+      "text": "Finish Angular Course",
+      "day": "2023-02-01T02:34",
+      "reminder": false,
+      "user": "lilia@univ.fr",
+      "id": 7
     }
   ],
   "navlinks": [
@@ -94,6 +108,13 @@
       "email": "zouakh.abd@gmail.com",
       "password": "test",
       "id": 1
+    },
+    {
+      "nom": "Lilia",
+      "prenom": "Mechehed",
+      "email": "lilia@univ.fr",
+      "password": "Lilia2023",
+      "id": 2
     }
   ]
 }
