@@ -5,4 +5,11 @@
     [task]="task"
     (btnDelete)="deleteTask(task)"
     (btnToggleReminder)="toggleTaskReminder(task)"></app-task-item>
+    <ng-container *ngIf="tasks.length == 0">
+        <div class="no-tasks">
+            <p>Vous n'avez encore ajouté aucune tache <br>...<br>
+                N'attendez plus, clicker sur le bouton en haut pour ajouter tous vos taches!
+            </p>
+        </div>
+    </ng-container>
 </div>
