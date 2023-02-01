@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (this.authService.isLoggedIn()) {
+    if (this.isLoggedIn()) {
       this.navlinkService.getNavlinks().subscribe((links) => (this.navlinks = links));
       this.getUserName();
     }else{
