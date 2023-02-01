@@ -45,7 +45,7 @@
     {
       "text": "Tasks",
       "icon": "fa-note-sticky",
-      "route": "/tasks"
+      "route": "/app"
     },
     {
       "text": "Reports",
