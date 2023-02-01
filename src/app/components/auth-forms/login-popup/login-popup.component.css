@@ -11,10 +11,11 @@
 /* Form Container */
 .login-form-container{
   display: block;
-  background: #fff;
-  width: 410px;
+  width: 500px;
   padding: 30px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 10px;	
+  box-shadow: 0 0 20px 6px #090b6f85;
 }
 
 /* Close button */

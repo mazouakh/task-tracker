@@ -1,116 +1,17 @@
-
 <div 
 *ngIf="showLoginPopup"
 class="center">
-    <!-- <input type="checkbox" id="show"> -->
-    <!-- <label class="show-btn">View Form</label> -->
     <div class="login-form-container form-container">
-    <!-- Close bottun -->
-    <label 
-    (click)="toggleLoginPopup()"
-    class="close-btn fas fa-times" 
-    title="close"></label>
     
-    <app-login-form></app-login-form>
+        <!-- Close bottun -->
+        <label 
+        (click)="toggleLoginPopup()"
+        class="close-btn fas fa-times" 
+        title="close">
+        </label>
+        <!-- ./ Close bottun -->
+    
+        <app-login-form></app-login-form>
     
     </div>
 </div>
-
-<span style="display: none;">
-    <!-- Header -->
-    <div class="form-title">
-        Connectez Vous
-    </div>
-    <!-- The form -->
-    <form action="#" class="login-form">
-        <!-- username -->
-        <div class="data">
-            <label>Email</label>
-            <input 
-            required
-            pattern="^[A-Za-z0-9+_.-]+@+(.+)+\.+(.+)$"
-            ngModel
-            name="email" 
-            #email="ngModel"
-            type="email">
-        </div>
-        <div 
-        class="alert alert-danger"
-        *ngIf="email.touched && !email.valid">
-            <ul>
-                <li
-                *ngIf="email.errors?.['required']">
-                The email is required.
-                </li>
-                <li
-                *ngIf="email.errors?.['pattern']">
-                Please enter a valid email adresse.
-                </li>
-            </ul>
-            <!-- <div 
-            *ngIf="email.errors?.['required']">
-                The email is required.
-            </div>
-            <div
-            *ngIf="email.errors?.['pattern']">
-                Please enter a valid email adresse.
-            </div> -->
-        </div>
-        <!-- password -->
-        <div class="data">
-            <label>Mot de passe</label>
-            <input 
-            required
-            minlength="8"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{0,}"
-            ngModel
-            name="password" 
-            #password="ngModel"
-            (change)="Log(password)"
-            type="password">
-        </div>
-        <div
-        class="alert alert-danger"
-        *ngIf="password.touched && !password.valid">
-            <ul>
-                <li
-                *ngIf="password.errors?.['required']">
-                The password is required.
-                </li>
-                <li
-                *ngIf="password.errors?.['pattern']">
-                The password should have at least 1 uppercase 1 lowercase and 1 number.
-                </li>
-                <li
-                *ngIf="password.errors?.['minlength']">
-                The password should be at least {{password.errors?.['minlength'].requiredLength}} characters.
-                </li>
-            </ul>
-            <!-- <div
-            *ngIf="password.errors?.['required']">
-                The password is required.
-            </div>
-            <div
-            *ngIf="password.errors?.['pattern']">
-                The password should have at least 1 uppercase 1 lowercase and 1 number.
-            </div>
-            <div
-            *ngIf="password.errors?.['minlength']">
-                The password should be at least {{password.errors?.['minlength'].requiredLength}} characters.
-            </div> -->
-        </div>
-        <!-- forgot password ? -->
-        <div class="forgot-pass">
-            <a href="#">Mot de passe oublié ?</a>
-        </div>
-        <!-- login button -->
-        <div class="btn">
-            <!-- <div class="inner"></div> -->
-            <button type="submit">Connexion</button>
-        </div>
-        <!-- Not a member? -->
-        <div class="signup-link">
-            Pas encore membre? <a href="#">Inscrivez vous</a>
-        </div>
-    </form>
-</span>
