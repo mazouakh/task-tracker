@@ -11,12 +11,7 @@ import { RegisterComponent } from './components/guest-app/register/register.comp
 import { LandingPageComponent } from './components/guest-app/landing-page/landing-page.component';
 import { MainAppComponent } from './components/main-app/main-app.component';
 import { MainAppModule } from './components/main-app/main-app.module';
-import { SignupFormComponent } from './components/auth-forms/signup-form/signup-form.component';
-import { LoginFormComponent } from './components/auth-forms/login-form/login-form.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { NavlinkComponent } from './components/navbar/navlink/navlink.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
-import { LoginPopupComponent } from './components/auth-forms/login-popup/login-popup.component';
 import { AuthFormsModule } from './components/auth-forms/auth-forms.module';
 import { GuestAppModule } from './components/guest-app/guest-app.module';
 import { NavbarModule } from './components/navbar/navbar.module';
@@ -28,10 +23,10 @@ const appRoutes: Routes = [
   {path: 'auth', component: RegisterComponent},
   {path: 'app', component: MainAppComponent, canActivate: [AuthGuard]},
   // Not Available routes
-  {path: 'calendar', component: PageUnderConstructionComponent},
-  {path: 'reports', component: PageUnderConstructionComponent},
-  {path: 'achievements', component: PageUnderConstructionComponent},
-  {path: 'settings', component: PageUnderConstructionComponent},
+  {path: 'calendar', component: PageUnderConstructionComponent, canActivate: [AuthGuard]},
+  {path: 'reports', component: PageUnderConstructionComponent, canActivate: [AuthGuard]},
+  {path: 'achievements', component: PageUnderConstructionComponent, canActivate: [AuthGuard]},
+  {path: 'settings', component: PageUnderConstructionComponent, canActivate: [AuthGuard]},
 
   {path: '**', component: PageNotFoundComponent}
 ]
